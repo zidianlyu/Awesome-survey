@@ -1,0 +1,15 @@
+#root {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 20px;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.survey-container {
+    width: 48%;
+}
+
+.report-container {
+    width: 48%;
+}

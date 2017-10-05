@@ -1,0 +1,58 @@
+.option-tips {
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.8s;
+}
+
+.survey-top-bar {
+    height: 3px;
+    width: 100%;
+    background-color: #4BC0C0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.survey-top-header {
+    display: flex;
+    justify-content: center;
+}
+
+.survey-item-input-group {
+    margin: 20px 20px 0;
+}
+
+.survey-item h4 {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.survey-submit-btn-group {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+}
+
+.custom-data-btn {
+    display: flex;
+}
+
+.step-label {
+    font-family: 'Helvetica', sans-serif;
+}
+
+.step-label span svg {
+    fill: rgb(236, 64, 122) !important;
+}
+
+.time-str-group {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
