@@ -87,7 +87,6 @@ class Survey extends React.Component {
         this.handleSnackBarOpen();
         this.state.optionNumStack.shift();
         if (this.state.optionNumStack.length === 0) {
-            this.props.updateTabIdx(3)
             this.setState({
                 optionNumStack: [...Array(this.props.store.getState().length).keys()].sort((a, b) => 0.5 - Math.random()),
                 stepLabel: 'Retake',
@@ -108,15 +107,17 @@ class Survey extends React.Component {
     }
 
     getViewChart = () => {
+        this.handleToolBtnClick('Here is the target chart!')
         let tabIdx = this.state.optionNumStack[0];
         this.props.updateTabIdx(tabIdx);
     }
 
     forwardToSurvey = (e) => {
         if (this.state.stepperIdx === 0) {
+            this.props.updateTabIdx(3)
+            this.handleToolBtnClick("Thank you for taking our survey!")
             this.setState({stepLabel: 'Ongoing', stepperIdx: 1})
         } else if (this.state.stepperIdx === 3) {
-            this.props.updateTabIdx(3)
             this.setState({
                 stepLabel: 'Start',
                 stepperIdx: 0,
@@ -128,11 +129,26 @@ class Survey extends React.Component {
         }
     }
 
+    resetSurvey = () => {
+        this.handleToolBtnClick("Roger that, we have reset the survey for you!")
+        this.props.updateTabIdx(3)
+        this.setState({
+            stepLabel: 'Start',
+            stepperIdx: 0,
+            stepMsg: 'Please share your thought!',
+            questionId: '',
+            answerId: '',
+            optionTrigger: false,
+        })
+    }
+
     buildInputButton(info) {
         let buttonInputs = [];
         for (let idx in info.answers) {
             buttonInputs.push(
-                <RadioButton key={idx} label={info.answers[~~ idx].text} value={~~ idx + 1} checkedIcon={< CheckCircle style = {{fill: teal500}}/>} uncheckedIcon={< PanoramaFishEye style = {{fill: teal500}}/>} style={{marginBottom: '12px'}} labelStyle={{
+                <RadioButton key={idx} label={info.answers[~~ idx].text} value={~~ idx + 1} checkedIcon={< CheckCircle style = {{fill: teal500}}/>} uncheckedIcon={< PanoramaFishEye style = {{fill: teal500}}/>} style={{
+                    marginBottom: '12px'
+                }} labelStyle={{
                     color: pink400,
                     fontSize: '15px'
                 }}/>
@@ -216,7 +232,7 @@ class Survey extends React.Component {
                     display: 'flex',
                     alignItems: 'center'
                 }} textStyle={{
-                    padding: '0',
+                    padding: '0'
                 }} subtitleStyle={{
                     fontSize: '17px'
                 }}/>
@@ -257,7 +273,9 @@ class Survey extends React.Component {
                                     }} backgroundColor={teal500} style={submitBtnStyle} onClick={() => this.getViewChart()}/>
                                 </div>
                                 <span>or</span>
-                                <RaisedButton label="Choose" labelStyle={{color: grey400}} style={submitBtnStyle} onClick={() => this.handleToolBtnClick('Oops, please select an option!!')}/>
+                                <RaisedButton label="Choose" labelStyle={{
+                                    color: grey400
+                                }} style={submitBtnStyle} onClick={() => this.handleToolBtnClick('Oops, please select an option!!')}/>
                             </div>
                         )}
                 </CardText>
@@ -287,7 +305,7 @@ class Survey extends React.Component {
                 <Paper style={surveyPaperStyle} zDepth={4}>
                     <div className="survey-top-bar"></div>
                     <div className="survey-top-header">
-                        <FloatingActionButton backgroundColor={pink400}>
+                        <FloatingActionButton backgroundColor={pink400} onClick={() => this.resetSurvey()}>
                             <ContentCreate/>
                         </FloatingActionButton>
                     </div>

@@ -190,7 +190,9 @@ class Report extends React.Component {
                 <Tabs tabItemContainerStyle={{
                     backgroundColor: teal500
                 }} inkBarStyle={{
-                    backgroundColor: pink400
+                    backgroundColor: pink400,
+                    height: '4px',
+                    bottom: '2px'
                 }} style={{
                     margin: '20px 0 0'
                 }} onChange={this.handleTabChange} value={this.state.tabIdx}>
@@ -214,7 +216,7 @@ class Report extends React.Component {
                 <Paper style={reportPaperStyle} zDepth={4}>
                     <div className='report-top-bar'></div>
                     <div className="report-top-header">
-                        <FloatingActionButton backgroundColor={teal500}>
+                        <FloatingActionButton backgroundColor={teal500} onClick={() => this.handleClickChip('Ah ha, please feel free to take a took at the data!')}>
                             <Visibility/>
                         </FloatingActionButton>
                     </div>
