@@ -52,15 +52,15 @@ open index.html
 
 5. All the buttons are responsive, use will get feedbacks in each click; a message will pop up from a snack bar
 
-    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/snackbar1.png" align="center" width="400" overflow="hidden">
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/snackbar1.png" align="center" width="600" overflow="hidden">
 
-    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/snackbar2.png" align="center" width="400" overflow="hidden">
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/snackbar2.png" align="center" width="600" overflow="hidden">
 
 6. "RANDOM" button can generate random results for the survey, "CLEAR" button can clean up  all the results from the survey
 
-    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/random.png" align="center" height="100" width="200" overflow="hidden">
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/random.png" align="center" height="80" width="150" overflow="hidden">
 
-    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/clear.png" align="center" height="100" width="200" overflow="hidden">
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/clear.png" align="center" height="80" width="150" overflow="hidden">
 
 ## Project Management
 
