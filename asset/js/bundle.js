@@ -9983,7 +9983,8 @@ var Report = function (_React$Component) {
 
             var reportPaperStyle = {
                 padding: '20px',
-                position: 'relative'
+                position: 'relative',
+                height: '745px'
             };
 
             return _react2.default.createElement(
@@ -46041,7 +46042,8 @@ var Survey = function (_React$Component) {
 
             var surveyPaperStyle = {
                 padding: '20px',
-                position: 'relative'
+                position: 'relative',
+                height: '745px'
             };
 
             var submitBtnStyle = {

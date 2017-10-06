@@ -204,7 +204,8 @@ class Survey extends React.Component {
     render() {
         const surveyPaperStyle = {
             padding: '20px',
-            position: 'relative'
+            position: 'relative',
+            height: '745px'
         };
 
         const submitBtnStyle = {

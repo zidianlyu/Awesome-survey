@@ -209,6 +209,7 @@ class Report extends React.Component {
         const reportPaperStyle = {
             padding: '20px',
             position: 'relative',
+            height: '745px'
         };
 
         return (
