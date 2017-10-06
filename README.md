@@ -1,11 +1,11 @@
 # Story Write Up
 
-This is an functional app for survey purpose built in Python Flask and jQuery.
+This is an functional app for survey purpose built in ReactJS.
 
 [LIVE][survey]
 
 - Author: Zidian Lyu
-- Time: Sep-2017
+- Time: Oct-2017
 
 ## The view of app
 
@@ -16,6 +16,7 @@ This is an functional app for survey purpose built in Python Flask and jQuery.
 ## Steps to run
 
 ```bash
+npm start
 open index.html
 ```
 
@@ -32,19 +33,34 @@ open index.html
 
 2. The report panel will interact with the user and update the count of answer selected.
 
-    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/react_chart.png" align="center" width="600" overflow="hidden">
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/react_chart.png" align="center" width="400" overflow="hidden">
 
 3. Right after an answered be submitted, the user can view the statistic of the answer chosen. And the UI automatically forward the user to the next question.
 
-    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/forward1.png" align="center" width="400" overflow="hidden">
-
     <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/forward2.png" align="center" width="400" overflow="hidden">
+
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/forward1.png" align="center" width="400" overflow="hidden">
 
 4. When the user answered the whole set of questions once(without repetition), the user can restart the answering question process, or the user can always view the data panel.
 
     <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/finish.png" align="center" width="400" overflow="hidden">
 
     <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/data_panel.png" align="center" width="400" overflow="hidden">
+
+
+### Extra Features
+
+5. All the buttons are responsive, use will get feedbacks in each click; a message will pop up from a snack bar
+
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/snackbar1.png" align="center" width="400" overflow="hidden">
+
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/snackbar2.png" align="center" width="400" overflow="hidden">
+
+6. "RANDOM" button can generate random results for the survey, "CLEAR" button can clean up  all the results from the survey
+
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/random.png" align="center" height="100" width="200" overflow="hidden">
+
+    <img src="https://github.com/zidianlyu/Awesome-survey/blob/master/docs/clear.png" align="center" height="100" width="200" overflow="hidden">
 
 ## Project Management
 
@@ -90,7 +106,7 @@ index.html(root)
 
 ##### Action -> Middlewares -> Reducer -> Store
 
-1. Declare action
+1. Declare action (config action object)
 ```javascript
 const surveyAction = (questionId, answerId) => {
     return {type: "VOTE", questionId: questionId, answerId: answerId};
@@ -98,7 +114,7 @@ const surveyAction = (questionId, answerId) => {
 export default surveyAction;
 ```
 
-2. Pass middlewares
+2. Pass middlewares (from store.dispatch(action))
 ```javascript
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
@@ -109,7 +125,7 @@ const store = compose(applyMiddleware(thunk))(createStore)(SurveyReducer);
 export default store;
 ```
 
-3. Handle state and create new one in reducer
+3. Handle state and create newState in reducer
 ```javascript
 const SurveyReducer = (state = initSurveyState, action) => {
     switch (action.type) {
@@ -138,8 +154,15 @@ export default SurveyReducer;
 
 4. update the store in dispatch
 ```javascript
+// in child component
 updateSurveyState = (e) => {
     this.props.store.dispatch(this.surveyAction(this.state.questionId, this.state.answerId));
+}
+this.props.updateStore();
+
+// in root component
+updateStore = () => {
+    this.setState({store: this.state.store})
 }
 ```
 
@@ -149,12 +172,12 @@ updateSurveyState = (e) => {
 
 ## Reference and citations
 
-[Matuerial-UI](http://www.material-ui.com/)
+[React-Redux](http://redux.js.org/)
 
-[Bootstrap](http://getbootstrap.com/)
+[Matuerial-UI](http://www.material-ui.com/)
 
 [Chartjs](http://www.chartjs.org/)
 
-[Fontawesome](http://fontawesome.io/)
+[Momentjs](https://momentjs.com/)
 
 [survey]: https://zidianlyu.github.io/Awesome-survey/
