@@ -230,6 +230,7 @@ class Survey extends React.Component {
             }}>
                 <CardHeader avatar={avatarMark} subtitle={info.text} style={{
                     display: 'flex',
+                    display: '-webkit-flex',
                     alignItems: 'center'
                 }} textStyle={{
                     padding: '0'
@@ -303,7 +304,7 @@ class Survey extends React.Component {
         return (
             <div className="survey-container">
                 <Paper style={surveyPaperStyle} zDepth={4}>
-                    <div className="survey-top-bar"></div>
+                    <div className="survey-top-bar" style={{backgroundColor: pink400}}></div>
                     <div className="survey-top-header">
                         <FloatingActionButton backgroundColor={pink400} onClick={() => this.resetSurvey()}>
                             <ContentCreate/>
@@ -320,7 +321,7 @@ class Survey extends React.Component {
                             <Card style={{
                                 height: '384px'
                             }}>
-                                <CardHeader title="Zidian Lyu" subtitle="Software Engineer" avatar="asset/img/profile_img.jpg"/>
+                                <CardHeader title="Zidian Lyu" subtitle="Software Engineer" avatar="asset/img/profile_img.jpg" style={{display: 'flex', display: '-webkit-flex', alignItems: 'center'}} subtitleStyle={{fontWeight: '100'}}/>
                                 <Divider/>
                                 <CardMedia overlay={< CardTitle title = "A survey about favorite" subtitle = {
                                     this.state.stepMsg

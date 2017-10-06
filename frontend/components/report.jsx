@@ -214,7 +214,7 @@ class Report extends React.Component {
         return (
             <div className="report-container">
                 <Paper style={reportPaperStyle} zDepth={4}>
-                    <div className='report-top-bar'></div>
+                    <div className='report-top-bar' style={{backgroundColor: teal500}}></div>
                     <div className="report-top-header">
                         <FloatingActionButton backgroundColor={teal500} onClick={() => this.handleClickChip('Ah ha, please feel free to take a took at the data!')}>
                             <Visibility/>
@@ -231,6 +231,7 @@ class Report extends React.Component {
                         <CardText>
                             <div style={{
                                 display: 'flex',
+                                display: '-webkit-flex',
                                 justifyContent: 'space-around'
                             }}>
                                 <Avatar onClick={() => this.handleClickChip('The first language that I learn about web development!')} style={{

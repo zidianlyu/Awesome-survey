@@ -1,5 +1,6 @@
 #root {
     display: flex;
+    display:-webkit-flex;
     justify-content: space-between;
     padding: 60px 20px;
     width: 940px;

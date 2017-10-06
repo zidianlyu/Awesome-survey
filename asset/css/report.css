@@ -22,14 +22,14 @@
 
 .data-under-chart {
     display: flex;
+    display:-webkit-flex;
     justify-content: space-around;
     margin: 20px auto;
 }
 
 .data-under-chart-item {
-    /*display: inline-block;*/
-    /*align-items: center;*/
     display: flex;
+    display:-webkit-flex;
     flex-direction: column;
     align-items: center;
 }
@@ -54,16 +54,17 @@
 .report-top-bar {
     height: 3px;
     width: 100%;
-    background-color: #4BC0C0;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
+    display:-webkit-flex;
     justify-content: center;
     align-items: center;
 }
 
 .report-top-header {
     display: flex;
+    display:-webkit-flex;
     justify-content: center;
 }

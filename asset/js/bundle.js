@@ -9694,6 +9694,8 @@ var _colors = __webpack_require__(51);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -9976,7 +9978,8 @@ var Report = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this2 = this,
+                _ref;
 
             var reportPaperStyle = {
                 padding: '20px',
@@ -9989,7 +9992,7 @@ var Report = function (_React$Component) {
                 _react2.default.createElement(
                     _Paper2.default,
                     { style: reportPaperStyle, zDepth: 4 },
-                    _react2.default.createElement('div', { className: 'report-top-bar' }),
+                    _react2.default.createElement('div', { className: 'report-top-bar', style: { backgroundColor: _colors.teal500 } }),
                     _react2.default.createElement(
                         'div',
                         { className: 'report-top-header' },
@@ -10016,10 +10019,9 @@ var Report = function (_React$Component) {
                             null,
                             _react2.default.createElement(
                                 'div',
-                                { style: {
-                                        display: 'flex',
-                                        justifyContent: 'space-around'
-                                    } },
+                                { style: (_ref = {
+                                        display: 'flex'
+                                    }, _defineProperty(_ref, 'display', '-webkit-flex'), _defineProperty(_ref, 'justifyContent', 'space-around'), _ref) },
                                 _react2.default.createElement(
                                     _Avatar2.default,
                                     { onClick: function onClick() {
@@ -45808,6 +45810,8 @@ var _reactMoment2 = _interopRequireDefault(_reactMoment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46032,7 +46036,8 @@ var Survey = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this4 = this,
+                _ref2;
 
             var surveyPaperStyle = {
                 padding: '20px',
@@ -46056,16 +46061,17 @@ var Survey = function (_React$Component) {
             );
 
             var surveyInput = this.props.store.getState().map(function (info) {
+                var _ref;
+
                 return _react2.default.createElement(
                     _Card.Card,
                     { key: info.id, style: {
                             height: '384px',
                             position: 'relative'
                         } },
-                    _react2.default.createElement(_Card.CardHeader, { avatar: avatarMark, subtitle: info.text, style: {
-                            display: 'flex',
-                            alignItems: 'center'
-                        }, textStyle: {
+                    _react2.default.createElement(_Card.CardHeader, { avatar: avatarMark, subtitle: info.text, style: (_ref = {
+                            display: 'flex'
+                        }, _defineProperty(_ref, 'display', '-webkit-flex'), _defineProperty(_ref, 'alignItems', 'center'), _ref), textStyle: {
                             padding: '0'
                         }, subtitleStyle: {
                             fontSize: '17px'
@@ -46168,7 +46174,7 @@ var Survey = function (_React$Component) {
                 _react2.default.createElement(
                     _Paper2.default,
                     { style: surveyPaperStyle, zDepth: 4 },
-                    _react2.default.createElement('div', { className: 'survey-top-bar' }),
+                    _react2.default.createElement('div', { className: 'survey-top-bar', style: { backgroundColor: _colors.pink400 } }),
                     _react2.default.createElement(
                         'div',
                         { className: 'survey-top-header' },
@@ -46190,7 +46196,7 @@ var Survey = function (_React$Component) {
                         { style: {
                                 height: '384px'
                             } },
-                        _react2.default.createElement(_Card.CardHeader, { title: 'Zidian Lyu', subtitle: 'Software Engineer', avatar: 'asset/img/profile_img.jpg' }),
+                        _react2.default.createElement(_Card.CardHeader, { title: 'Zidian Lyu', subtitle: 'Software Engineer', avatar: 'asset/img/profile_img.jpg', style: (_ref2 = { display: 'flex' }, _defineProperty(_ref2, 'display', '-webkit-flex'), _defineProperty(_ref2, 'alignItems', 'center'), _ref2), subtitleStyle: { fontWeight: '100' } }),
                         _react2.default.createElement(_Divider2.default, null),
                         _react2.default.createElement(
                             _Card.CardMedia,
